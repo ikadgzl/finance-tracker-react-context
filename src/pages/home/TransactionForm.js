@@ -5,6 +5,7 @@ const INITIAL_TRANSACTION_INFO = {
   name: '',
   amount: ''
 };
+
 export default function TransactionForm({ uid }) {
   const [transactionInfo, setTransactionInfo] = useState(
     INITIAL_TRANSACTION_INFO

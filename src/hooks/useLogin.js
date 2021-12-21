@@ -14,7 +14,11 @@ export const useLogin = () => {
     setIsPending(true);
 
     try {
+      // projectAuth throwing new error if not found in the db, goes directly into the catch phase
+      // no need to explicitly throw new err.
       const res = await projectAuth.signInWithEmailAndPassword(email, password);
+
+      console.log(res);
 
       dispatch({ type: 'LOGIN', payload: res.user });
 
@@ -23,8 +27,6 @@ export const useLogin = () => {
         setError(false);
       }
     } catch (error) {
-      console.log(error.message);
-
       if (!isCancelled) {
         setError(error.message);
         setIsPending(false);

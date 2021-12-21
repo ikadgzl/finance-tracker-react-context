@@ -12,9 +12,6 @@ export default function Home() {
     ['createdAt', 'asc']
   );
 
-  console.log('user', user);
-  console.log('documents', documents);
-
   return (
     <div className={styles.container}>
       <div className={styles.content}>
